@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Specifications and working principles of MM-Wave sensors. Learn about how MM-Wave sensors are used for high-precision object detection, gesture recognition, and environmental mapping."> 
+    <title>MM-Wave Sensor Specifications and Working Principles</title>
+    <style>
+        body {
+            padding: 30px;
+            background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+            font-family: Arial, sans-serif;
+        }
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        button, div {
+            color: blueviolet;
+            background-color: #c9d6ff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            margin: 15px auto;
+            display: block;
+            width: fit-content;
+        }
+        button:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+        .section-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .sensor-details {
+            font-size: 18px;
+            color: rgb(12, 11, 11);
+            margin: 15px;
+        }
+        .image-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+        }
+        ul {
+            margin: 10px 0;
+        }
+    </style>
+    <script type="module" src="./homepage.js"></script>
+</head>
+<body>
+    <h1>Welcome to the Homepage</h1>
+
+    <!-- Human Detection Section -->
+    <div class="section-title">Human Detection Area</div>
+    <div class="sensor-details">
+        <span>MM-Wave Sensor Specifications:</span>
+        <ul>
+            <li>Range: Up to 10 meters</li>
+            <li>Detection: Human presence, motion, and velocity</li>
+            <li>Frequency: 60 GHz</li>
+            <li>Accuracy: < 1 mm</li>
+            <li>Angle Coverage: 120 degrees</li>
+            <li>Operating Temperature: -40°C to 85°C</li>
+        </ul>
+    </div>
+
+    <div class="image-container">
+        <img src="image1.jpg.png" alt="MM-Wave Sensor">
+    </div>
+
+    <h2 class="section-title">MM-Wave Sensor: Specifications and Working Principles</h2>
+    <p>MM-Wave (Millimeter-Wave) sensors operate at frequencies between 24 GHz and 300 GHz, offering high-precision sensing for various applications such as gesture recognition, object detection, and environmental mapping. These sensors can penetrate materials like plastics, walls, and clothing, making them ideal for use in automotive, industrial, and robotics sectors.</p>
+
+    <h2 class="section-title">Key Specifications</h2>
+    <ul>
+        <li><strong>Operating Frequency:</strong> Typically in the range of 60 GHz to 80 GHz, depending on the sensor type and application.</li>
+        <li><strong>Range:</strong> Up to 100 meters or more, depending on power and configuration.</li>
+        <li><strong>Field of View:</strong> Configurable; narrow or wide depending on the antenna design.</li>
+        <li><strong>Resolution:</strong> High resolution, capable of distinguishing between small objects and providing detailed information such as velocity and distance.</li>
+        <li><strong>Power Consumption:</strong> Low-power operation suited for continuous monitoring.</li>
+        <li><strong>Environmental Resistance:</strong> Unaffected by lighting conditions and able to penetrate smoke, fog, and dust.</li>
+        <li><strong>Speed Detection:</strong> Capable of measuring the relative speed of moving objects through Doppler effect analysis.</li>
+    </ul>
+
+    <h2 class="section-title">Working Principles</h2>
+    <p>MM-Wave sensors emit electromagnetic waves at millimeter wavelengths. When these waves encounter an object, they are reflected back to the sensor. By analyzing the time delay, frequency shift (Doppler effect), and phase differences of the returned signal, the sensor can accurately determine the object's distance, speed, angle, and other characteristics. This allows for precise tracking and detection in a variety of environments.</p>
+
+    <h2 class="section-title">Applications</h2>
+    <ul>
+        <li><strong>Automotive:</strong> Collision avoidance, adaptive cruise control, and blind-spot detection.</li>
+        <li><strong>Industrial Automation:</strong> Object counting, distance measurement, and environmental mapping.</li>
+        <li><strong>Healthcare:</strong> Monitoring vital signs such as heartbeat and respiration.</li>
+        <li><strong>Robotics:</strong> Environment mapping, obstacle detection, and autonomous navigation.</li>
+    </ul>
+
+    <!-- Human Detection Button -->
+    <button id="humanDetection">Human Detection</button>
+
+    <script src="homepage.js"></script>
+</body>
+</html>

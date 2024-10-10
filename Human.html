@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Human Detection Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map { height: 400px; }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        button {
+            color: blueviolet;
+            background-color: #c9d6ff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: bold;
+            border: none;
+            margin: 15px auto;
+            display: block;
+            width: fit-content;
+        }
+        button:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Human Detection Status</h1>
+<p id="status">Loading sensor data...</p>
+
+<!-- Back Button -->
+<button id="backButton">Back to Homepage</button>
+
+<div id="map"></div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    var map = L.map('map').setView([51.505, -0.09], 2);  // Default view (worldwide)
+
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+
+    var marker;
+
+    // Function to update sensor data and display on map
+    function updateSensorData() {
+        fetch('/sensor_value')
+        .then(response => response.json())
+        .then(data => {
+            let status = data.human_detected == 1 ? "Human Detected!" : "No Human Detected";
+            document.getElementById("status").textContent = status;
+
+            // Update the marker position on the map
+            if (marker) {
+                map.removeLayer(marker);
+            }
+            marker = L.marker([data.latitude, data.longitude]).addTo(map)
+                .bindPopup(status).openPopup();
+        });
+    }
+
+    // Update the sensor data every 5 seconds
+    setInterval(updateSensorData, 5000);
+
+    // Back button functionality
+    const backButton = document.getElementById('backButton');
+    backButton.addEventListener('click', () => {
+        window.location.href = 'index.html'; // Adjust if your homepage file name is different
+    });
+</script>
+
+</body>
+</html>
